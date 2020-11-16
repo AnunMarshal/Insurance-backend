@@ -218,7 +218,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AppComponent = function AppComponent() {
       _classCallCheck(this, AppComponent);
 
-      this.title = 'training';
+      this.title = 'Insurance';
     };
 
     AppComponent.ɵfac = function AppComponent_Factory(t) {
@@ -327,12 +327,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./auth/auth.module */
     "./src/app/auth/auth.module.ts");
-    /* harmony import */
-
-
-    var _angular_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-    /*! @angular/material */
-    "./node_modules/@angular/material/__ivy_ngcc__/esm2015/material.js");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -347,13 +341,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return new (t || AppModule)();
       },
       providers: [],
-      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"], _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialogModule"]]]
+      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"], _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialogModule"]]
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"]]
       });
     })();
     /*@__PURE__*/
@@ -364,7 +358,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"], _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialogModule"]],
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"], _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"]],
           providers: [],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         }]
@@ -662,8 +656,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.user = {
           username: "",
           email: "",
-          password: "",
-          is_admin: false
+          password: ""
         };
         this.error = "";
         this.hide = true;
@@ -685,14 +678,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this = this;
 
           this._us.login(form.value).subscribe(function (res) {
-            console.log("res", res);
             var length = Object.keys(res).length;
 
-            if (length == 4) {
+            if (length === 4) {
               localStorage.setItem("currentuser", res.username);
               localStorage.setItem("email", _this.user.email);
               localStorage.setItem("user_id", res.userId);
-              console.log("localstorage", localStorage);
 
               _this._router.navigate(["/"]);
             } else {
@@ -1224,8 +1215,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           username: "",
           email: "",
           password: "",
-          confirm_password: "",
-          is_admin: false
+          confirm_password: ""
         };
         this.hide = true;
       }
@@ -1633,11 +1623,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "logout",
         value: function logout() {
           localStorage.clear();
-        }
-      }, {
-        key: "add_insurance",
-        value: function add_insurance(id, insurance) {
-          return this._http.patch(this.dburl + "/api/user/" + id, insurance);
         }
       }]);
 
@@ -2057,31 +2042,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-    /*! src/app/modules/insurance/safe.pipe */
-    "./src/app/modules/insurance/safe.pipe.ts");
-    /* harmony import */
-
-
-    var src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! src/app/modules/insurance/insurance-create/insurance-create.component */
     "./src/app/modules/insurance/insurance-create/insurance-create.component.ts");
     /* harmony import */
 
 
-    var src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! src/app/modules/insurance/calculate/calculate.component */
     "./src/app/modules/insurance/calculate/calculate.component.ts");
     /* harmony import */
 
 
-    var src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! src/app/modules/insurance/insurance.component */
     "./src/app/modules/insurance/insurance.component.ts");
     /* harmony import */
 
 
-    var src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! src/app/modules/insurance/insurance-show/insurance-show.component */
     "./src/app/modules/insurance/insurance-show/insurance-show.component.ts");
 
@@ -2101,9 +2080,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](DefaultModule, {
-        declarations: [_default_component__WEBPACK_IMPORTED_MODULE_2__["DefaultComponent"], src_app_modules_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"], src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_11__["InsuranceComponent"], src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__["InsuranceCreateComponent"], src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_12__["InsuranceShowComponent"], src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__["SafePipe"], src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_10__["CalculateComponent"]],
+        declarations: [_default_component__WEBPACK_IMPORTED_MODULE_2__["DefaultComponent"], src_app_modules_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"], src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_10__["InsuranceComponent"], src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__["InsuranceCreateComponent"], src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_11__["InsuranceShowComponent"], src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_9__["CalculateComponent"]],
         imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"], src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatPaginatorModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"]],
-        exports: [src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__["InsuranceCreateComponent"], src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__["SafePipe"]]
+        exports: [src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__["InsuranceCreateComponent"]]
       });
     })();
     /*@__PURE__*/
@@ -2113,10 +2092,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DefaultModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-          declarations: [_default_component__WEBPACK_IMPORTED_MODULE_2__["DefaultComponent"], src_app_modules_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"], src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_11__["InsuranceComponent"], src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__["InsuranceCreateComponent"], src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_12__["InsuranceShowComponent"], src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__["SafePipe"], src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_10__["CalculateComponent"]],
+          declarations: [_default_component__WEBPACK_IMPORTED_MODULE_2__["DefaultComponent"], src_app_modules_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"], src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_10__["InsuranceComponent"], src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__["InsuranceCreateComponent"], src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_11__["InsuranceShowComponent"], src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_9__["CalculateComponent"]],
           imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"], src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatPaginatorModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"]],
           schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["CUSTOM_ELEMENTS_SCHEMA"]],
-          exports: [src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__["InsuranceCreateComponent"], src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__["SafePipe"]]
+          exports: [src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__["InsuranceCreateComponent"]]
         }]
       }], null, null);
     })();
@@ -2919,7 +2898,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           smooking: "false",
           alcohol: "false",
           exercise: "false",
-          drugs: "false"
+          drugs: "false",
+          user: localStorage.getItem('user_id')
         };
       }
 
@@ -3107,7 +3087,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this._is.get_insurance(this.data.id).subscribe(function (res) {
             _this6.result = res.result;
-            console.log('response', _this6.result);
             _this6.premium = res.premium;
           }, function (err) {
             console.log(err);
@@ -3881,10 +3860,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function pagechange(pageevent) {
           var _this8 = this;
 
-          console.log("pageevent", pageevent);
-
           this._is.get_all_insurances(localStorage.getItem("user_id"), this.pagesize, pageevent.pageIndex + 1).subscribe(function (res) {
-            console.log("res", res);
             _this8.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](res);
           });
         }
@@ -3920,7 +3896,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this9.dataSource.paginator = _this9.paginator;
 
             _this9._is.get_all_insurances(localStorage.getItem("user_id"), _this9.pagesize, _this9.page).subscribe(function (res) {
-              console.log("res", res);
               _this9.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](res);
             });
           }, function (err) {
@@ -4207,11 +4182,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return this._http.get(this.dburl + "/api/insurance/" + id);
         }
       }, {
-        key: "add_user",
-        value: function add_user(id, user) {
-          return this._http.patch(this.dburl + "/api/insurance/" + id, user);
-        }
-      }, {
         key: "edit_insurance",
         value: function edit_insurance(insurance) {
           return this._http.patch(this.dburl + "/api/insurance/" + insurance._id, insurance);
@@ -4246,84 +4216,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }], function () {
         return [{
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
-        }];
-      }, null);
-    })();
-    /***/
-
-  },
-
-  /***/
-  "./src/app/modules/insurance/safe.pipe.ts":
-  /*!************************************************!*\
-    !*** ./src/app/modules/insurance/safe.pipe.ts ***!
-    \************************************************/
-
-  /*! exports provided: SafePipe */
-
-  /***/
-  function srcAppModulesInsuranceSafePipeTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "SafePipe", function () {
-      return SafePipe;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/platform-browser */
-    "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
-
-    var SafePipe =
-    /*#__PURE__*/
-    function () {
-      function SafePipe(sanitizer) {
-        _classCallCheck(this, SafePipe);
-
-        this.sanitizer = sanitizer;
-      }
-
-      _createClass(SafePipe, [{
-        key: "transform",
-        value: function transform(url) {
-          return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-        }
-      }]);
-
-      return SafePipe;
-    }();
-
-    SafePipe.ɵfac = function SafePipe_Factory(t) {
-      return new (t || SafePipe)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["DomSanitizer"]));
-    };
-
-    SafePipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({
-      name: "safe",
-      type: SafePipe,
-      pure: true
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SafePipe, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"],
-        args: [{
-          name: 'safe'
-        }]
-      }], function () {
-        return [{
-          type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["DomSanitizer"]
         }];
       }, null);
     })();

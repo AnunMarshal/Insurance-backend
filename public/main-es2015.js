@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppComponent {
     constructor() {
-        this.title = 'training';
+        this.title = 'Insurance';
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
@@ -168,8 +168,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/shared.module */ "./src/app/shared/shared.module.ts");
 /* harmony import */ var _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./layouts/auth-default/auth-default.module */ "./src/app/layouts/auth-default/auth-default.module.ts");
 /* harmony import */ var _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./auth/auth.module */ "./src/app/auth/auth.module.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/__ivy_ngcc__/esm2015/material.js");
-
 
 
 
@@ -190,8 +188,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"],
             _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"],
             _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"],
-            _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialogModule"]
+            _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
@@ -199,8 +196,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"],
         _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"],
         _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"],
-        _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"],
-        _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialogModule"]] }); })();
+        _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -214,8 +210,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_5__["DefaultModule"],
                     _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"],
                     _layouts_auth_default_auth_default_module__WEBPACK_IMPORTED_MODULE_7__["AuthDefaultModule"],
-                    _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"],
-                    _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialogModule"]
+                    _auth_auth_module__WEBPACK_IMPORTED_MODULE_8__["AuthModule"]
                 ],
                 providers: [],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -395,7 +390,7 @@ class LoginComponent {
         this._us = _us;
         this._router = _router;
         this.logo = __webpack_require__(/*! src/app/auth/logo.jpg */ "./src/app/auth/logo.jpg");
-        this.user = { username: "", email: "", password: "", is_admin: false };
+        this.user = { username: "", email: "", password: "" };
         this.error = "";
         this.hide = true;
     }
@@ -407,13 +402,11 @@ class LoginComponent {
     }
     login(form) {
         this._us.login(form.value).subscribe(res => {
-            console.log("res", res);
             let length = Object.keys(res).length;
-            if (length == 4) {
+            if (length === 4) {
                 localStorage.setItem("currentuser", res.username);
                 localStorage.setItem("email", this.user.email);
                 localStorage.setItem("user_id", res.userId);
-                console.log("localstorage", localStorage);
                 this._router.navigate(["/"]);
             }
             else {
@@ -672,7 +665,7 @@ class SignupComponent {
         this._us = _us;
         this._router = _router;
         this.logo = __webpack_require__(/*! src/app/auth/logo.jpg */ "./src/app/auth/logo.jpg");
-        this.user = { username: "", email: "", password: "", confirm_password: "", is_admin: false };
+        this.user = { username: "", email: "", password: "", confirm_password: "" };
         this.hide = true;
     }
     ngOnInit() {
@@ -862,9 +855,6 @@ class UserService {
     logout() {
         localStorage.clear();
     }
-    add_insurance(id, insurance) {
-        return this._http.patch(this.dburl + "/api/user/" + id, insurance);
-    }
 }
 UserService.ɵfac = function UserService_Factory(t) { return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
 UserService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: UserService, factory: UserService.ɵfac, providedIn: 'root' });
@@ -1049,12 +1039,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/shared.module */ "./src/app/shared/shared.module.ts");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/__ivy_ngcc__/esm2015/material.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/modules/insurance/safe.pipe */ "./src/app/modules/insurance/safe.pipe.ts");
-/* harmony import */ var src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/modules/insurance/insurance-create/insurance-create.component */ "./src/app/modules/insurance/insurance-create/insurance-create.component.ts");
-/* harmony import */ var src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/modules/insurance/calculate/calculate.component */ "./src/app/modules/insurance/calculate/calculate.component.ts");
-/* harmony import */ var src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/modules/insurance/insurance.component */ "./src/app/modules/insurance/insurance.component.ts");
-/* harmony import */ var src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/modules/insurance/insurance-show/insurance-show.component */ "./src/app/modules/insurance/insurance-show/insurance-show.component.ts");
-
+/* harmony import */ var src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/modules/insurance/insurance-create/insurance-create.component */ "./src/app/modules/insurance/insurance-create/insurance-create.component.ts");
+/* harmony import */ var src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/modules/insurance/calculate/calculate.component */ "./src/app/modules/insurance/calculate/calculate.component.ts");
+/* harmony import */ var src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/modules/insurance/insurance.component */ "./src/app/modules/insurance/insurance.component.ts");
+/* harmony import */ var src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/modules/insurance/insurance-show/insurance-show.component */ "./src/app/modules/insurance/insurance-show/insurance-show.component.ts");
 
 
 
@@ -1091,11 +1079,10 @@ DefaultModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInje
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](DefaultModule, { declarations: [_default_component__WEBPACK_IMPORTED_MODULE_2__["DefaultComponent"],
         src_app_modules_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"],
-        src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_11__["InsuranceComponent"],
-        src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__["InsuranceCreateComponent"],
-        src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_12__["InsuranceShowComponent"],
-        src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__["SafePipe"],
-        src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_10__["CalculateComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_10__["InsuranceComponent"],
+        src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__["InsuranceCreateComponent"],
+        src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_11__["InsuranceShowComponent"],
+        src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_9__["CalculateComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
         _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"],
         src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"],
         _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"],
@@ -1110,19 +1097,17 @@ DefaultModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInje
         _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"],
         _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDividerModule"],
         _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatRadioModule"],
-        _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"]], exports: [src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__["InsuranceCreateComponent"],
-        src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__["SafePipe"]] }); })();
+        _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"]], exports: [src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__["InsuranceCreateComponent"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DefaultModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
                 declarations: [
                     _default_component__WEBPACK_IMPORTED_MODULE_2__["DefaultComponent"],
                     src_app_modules_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"],
-                    src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_11__["InsuranceComponent"],
-                    src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__["InsuranceCreateComponent"],
-                    src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_12__["InsuranceShowComponent"],
-                    src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__["SafePipe"],
-                    src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_10__["CalculateComponent"]
+                    src_app_modules_insurance_insurance_component__WEBPACK_IMPORTED_MODULE_10__["InsuranceComponent"],
+                    src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__["InsuranceCreateComponent"],
+                    src_app_modules_insurance_insurance_show_insurance_show_component__WEBPACK_IMPORTED_MODULE_11__["InsuranceShowComponent"],
+                    src_app_modules_insurance_calculate_calculate_component__WEBPACK_IMPORTED_MODULE_9__["CalculateComponent"]
                 ],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
@@ -1146,8 +1131,7 @@ DefaultModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInje
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["CUSTOM_ELEMENTS_SCHEMA"]
                 ],
                 exports: [
-                    src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_9__["InsuranceCreateComponent"],
-                    src_app_modules_insurance_safe_pipe__WEBPACK_IMPORTED_MODULE_8__["SafePipe"]
+                    src_app_modules_insurance_insurance_create_insurance_create_component__WEBPACK_IMPORTED_MODULE_8__["InsuranceCreateComponent"]
                 ]
             }]
     }], null, null); })();
@@ -1501,7 +1485,8 @@ class InsuranceCreateComponent {
             smooking: "false",
             alcohol: "false",
             exercise: "false",
-            drugs: "false"
+            drugs: "false",
+            user: localStorage.getItem('user_id')
         };
     }
     ngOnInit() {
@@ -1602,7 +1587,6 @@ class InsuranceShowComponent {
     ngOnInit() {
         this._is.get_insurance(this.data.id).subscribe(res => {
             this.result = res.result;
-            console.log('response', this.result);
             this.premium = res.premium;
         }, err => {
             console.log(err);
@@ -1972,9 +1956,7 @@ class InsuranceComponent {
         });
     }
     pagechange(pageevent) {
-        console.log("pageevent", pageevent);
         this._is.get_all_insurances(localStorage.getItem("user_id"), this.pagesize, pageevent.pageIndex + 1).subscribe(res => {
-            console.log("res", res);
             this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](res);
         });
     }
@@ -1998,7 +1980,6 @@ class InsuranceComponent {
         this._is.delete_insurance(id).subscribe(res => {
             this.dataSource.paginator = this.paginator;
             this._is.get_all_insurances(localStorage.getItem("user_id"), this.pagesize, this.page).subscribe(res => {
-                console.log("res", res);
                 this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](res);
             });
         }, err => { console.log(err); });
@@ -2135,9 +2116,6 @@ class InsuranceService {
     get_insurance(id) {
         return this._http.get(this.dburl + "/api/insurance/" + id);
     }
-    add_user(id, user) {
-        return this._http.patch(this.dburl + "/api/insurance/" + id, user);
-    }
     edit_insurance(insurance) {
         return this._http.patch(this.dburl + "/api/insurance/" + insurance._id, insurance);
     }
@@ -2153,41 +2131,6 @@ InsuranceService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
                 providedIn: 'root'
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
-
-
-/***/ }),
-
-/***/ "./src/app/modules/insurance/safe.pipe.ts":
-/*!************************************************!*\
-  !*** ./src/app/modules/insurance/safe.pipe.ts ***!
-  \************************************************/
-/*! exports provided: SafePipe */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SafePipe", function() { return SafePipe; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
-
-
-
-class SafePipe {
-    constructor(sanitizer) {
-        this.sanitizer = sanitizer;
-    }
-    transform(url) {
-        return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    }
-}
-SafePipe.ɵfac = function SafePipe_Factory(t) { return new (t || SafePipe)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["DomSanitizer"])); };
-SafePipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({ name: "safe", type: SafePipe, pure: true });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SafePipe, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"],
-        args: [{
-                name: 'safe'
-            }]
-    }], function () { return [{ type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["DomSanitizer"] }]; }, null); })();
 
 
 /***/ }),
